@@ -43,6 +43,7 @@
 body {
   background: #000;
   color: #eee;
+  overflow-x: hidden;
 }
 
 header.hero {
@@ -83,8 +84,8 @@ p {
 iframe {
   display: block;
   margin: 20px auto;
-  width: 90%;
-  max-width: 560px;
+  width: 100%;
+  max-width: 700px;
   border: none;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
@@ -100,22 +101,73 @@ a:hover {
   color: #fff;
 }
 
+/* ===== CONTACT SECTION ===== */
 .contact {
   text-align: center;
+  padding: 60px 20px;
+  background: #00111a;
+  color: #eee;
 }
 
-.contact a {
+.contact h2 {
+  font-size: 2rem;
+  color: #00aaff;
+  margin-bottom: 15px;
+}
+
+.contact p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: #ccc;
+}
+
+.contact-links a {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   margin: 10px 15px;
-  font-weight: 600;
+  padding: 12px 24px;
   font-size: 1rem;
+  font-weight: 600;
+  color: #00aaff;
+  border: 1px solid #00aaff;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  min-height: 44px;
 }
 
-.contact a i {
+.contact-links a i {
   margin-right: 8px;
+  font-size: 1.2rem;
 }
 
+.contact-links a:hover {
+  background: #00aaff;
+  color: #000;
+}
+
+/* ===== NAVIGATION ===== */
+.main-nav a {
+  margin: 0 15px;
+  color: #00aaff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.main-nav a:hover { color: #fff; }
+
+/* ===== EVENTS ===== */
+.events ul {
+  max-width: 600px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  color: #ccc;
+}
+
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 20px;
@@ -135,7 +187,7 @@ footer {
   color: #fff;
 }
 
-/* Fade-in animations for sections */
+/* ===== ANIMATIONS ===== */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -146,99 +198,41 @@ footer {
 .music { animation-delay: 0.6s; }
 .contact { animation-delay: 0.9s; }
 
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet view */
 @media (max-width: 768px) {
   header h1 { font-size: 2.2rem; }
   h2 { font-size: 1.5rem; }
-  iframe { width: 100%; }
-  .contact a { display: block; margin: 10px 0; }
+  header.hero { padding: 100px 15px 60px; }
+  .main-nav a { display: inline-block; margin: 8px 10px; }
 }
 
-.main-nav a {
-  margin: 0 15px;
-  color: #00aaff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-.main-nav a:hover { color: #fff; }
-
-.events ul {
-  max-width: 600px;
-  margin: 0 auto;
-  list-style: none;
-  padding: 0;
-  text-align: center;
-  color: #ccc;
-}
-
-/* ===== Contact Section ===== */
-.contact {
-  text-align: center;
-  padding: 60px 20px;
-  background: #00111a; /* dark blue tone */
-  color: #eee;
-}
-
-.contact h2 {
-  font-size: 2rem;
-  color: #00aaff;
-  margin-bottom: 15px;
-}
-
-.contact p {
-  font-size: 1rem;
-  margin-bottom: 25px;
-  color: #ccc;
-}
-
-.contact-links a {
-  display: inline-flex;
-  align-items: center;
-  margin: 10px 15px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #00aaff;
-  border: 1px solid #00aaff;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.contact-links a i {
-  margin-right: 8px;
-  font-size: 1.2rem;
-}
-
-.contact-links a:hover {
-  background: #00aaff;
-  color: #000;
-}
-
-.some-section {
-  display: flex;
-  flex-wrap: wrap;
-}
-@media (max-width: 600px) {
-  .some-section {
-    flex-direction: column;
+/* Small mobile view */
+@media (max-width: 480px) {
+  header.hero {
+    padding: 80px 10px 60px;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 0.95rem;
+  }
+  .contact-links a {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+  }
+  iframe {
+    width: 100%;
+    max-width: 100%;
   }
 }
-
-
-@media (max-width: 768px) {
-  header h1 { font-size: 2.2rem; }
-  .main-nav a { display: block; margin: 8px 0; }
-  iframe { width: 100%; }
-}
-
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  
-}
-
